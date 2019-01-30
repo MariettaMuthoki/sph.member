@@ -1,0 +1,63 @@
+<odoo>
+<data>
+<!-- LIST VIEW -->
+<record id="sph_member_view_tree" model="ir.ui.view">
+<field name="name">All SPH Members</field>
+<field name="model">sph.member</field>
+<field name="arch" type="xml">
+  <tree>
+  <field name="name"/>
+  <field name="date_of_joining"/>
+  <field name="city"/>
+  <field name="street"/>
+  </tree>
+</field>
+</record>
+
+
+<!-- Form -->
+<!-- <record id="view_member_form" model="ir.ui.view">
+  <field name="name">SPH Member</field>
+  <field name="model">sph.member</field>
+  <field name="arch" type="xml">
+  <form>
+    <sheet>
+    <group name="group_top">
+      <group name="group_left">
+        <field name="name"/>
+        <field name="street"/>
+        <field name="city"/>
+      </group>
+    <group name="group_down">
+      <field name="country_id"/>
+      <field name="related_partner"/>
+      <field name="category_id"/>
+    </group>
+    </sheet>
+    </form>
+  </field>
+</record> -->
+<!-- FORM VIEW -->
+
+<!-- record for the "ir.ctions.act_Window" -->
+<record id="action_records_form" model="ir.actions.act_window">
+  <field name="name">SPH REG</field>
+  <field name="type">ir.actions.act_window</field>
+  <field name="res_model">sph.member</field>
+  <field name="view_type">form</field>
+  <field name="view_mode">tree,form</field>
+</record>
+
+
+<!-- record for the "ir.actions.act_Window" -->
+
+<!-- menu point -->
+<menuitem id="menu_records" name="SPH REG" sequence="22"/>
+<!-- menu point -->
+
+<!-- action for the menu point -->
+<menuitem action= "action_records_form" id="menu_action_recs"
+    parent="menu_records" sequence="10"/>
+<!-- action for the menu point -->
+</data>
+</odoo>
